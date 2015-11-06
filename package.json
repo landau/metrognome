@@ -1,0 +1,25 @@
+{
+  "name": "metrognome",
+  "version": "1.0.0",
+  "description": "A JS metronome",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R nyan --recursive lib test",
+    "build": "browserify ./lib/index.js -t babelify --outfile ./public/js/index.js"
+  },
+  "keywords": [
+    "metronome"
+  ],
+  "author": "Trevor Landau <landautrevor@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "webworkify": "^1.0.2"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}
