@@ -5,7 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -R nyan --recursive lib test",
-    "build": "browserify ./lib/index.js -t babelify --outfile ./public/js/index.js"
+    "build": "browserify ./lib/index.js -v -d --extension=.jsx --outfile ./public/js/index.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
   },
   "keywords": [
     "metronome"
@@ -13,10 +23,14 @@
   "author": "Trevor Landau <landautrevor@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.0.15",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
     "chai": "^3.4.0",
     "mocha": "^2.3.3",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "reactify": "^1.1.1",
     "webworkify": "^1.0.2"
   },
   "dependencies": {
